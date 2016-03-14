@@ -6,7 +6,7 @@ A set of Python modules that create a simple webpage. Written as a project for t
 You can download the latest version of the project [here](https://github.com/DavidPrichard/Simple-Python-Website/archive/master.zip),
 or you can clone the repo: `git clone https://github.com/DavidPrichard/Simple-Python-Website/.git`
 
-## Running
+## Run it
 
 If you don't already have Python, you will need to [download it](https://www.python.org/downloads/). The project was written for Python 2.7.11, but it currently runs in 3.5 as well.
 
