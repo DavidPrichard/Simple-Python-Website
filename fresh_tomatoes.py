@@ -55,9 +55,6 @@ main_page_content = '''
     </main>
 
     <div class="modal" id="trailer" style="display:none">
-        <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
-            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_"/>
-        </a>
         <div id="trailer-video-container">
         </div>
     </div>
