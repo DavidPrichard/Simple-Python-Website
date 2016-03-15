@@ -72,16 +72,19 @@ movie_tile_content = '''
 <div class="movie-tile" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}">
     <h2>{movie_title}</h2>
+    <p>{director}, {release_date}</p>
 </div>
 '''
 
 # Object used to store and render each movie
 class Movie:
 
-    def __init__(self, title, trailer_youtube_url, poster_image_url):
+    def __init__(self, title, trailer_youtube_url, poster_image_url, director, release_date):
         self.title = title
         self.trailer_youtube_url = trailer_youtube_url
         self.poster_image_url = poster_image_url
+        self.director = director
+        self.release_date = release_date
 
 
 def create_movie_tiles_content(movies):
@@ -101,6 +104,8 @@ def create_movie_tiles_content(movies):
             movie_title=movie.title,
             trailer_youtube_id=trailer_youtube_id,
             poster_image_url=movie.poster_image_url,
+            director=movie.director,
+            release_date=movie.release_date
         )
     return content
 
@@ -126,19 +131,32 @@ def open_movies_page(movies):
 if __name__ == '__main__':
 
     movie1 = Movie('The Matrix',
-               'https://www.youtube.com/watch?v=m8e-FF8MsqU',
-               'https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg'
-               )
+                   'https://www.youtube.com/watch?v=m8e-FF8MsqU',
+                   'https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg',
+                   'The Wachowskis',
+                   '1999'
+                   )
 
     movie2 = Movie('Lost in Translation',
-               'https://www.youtube.com/watch?v=sU0oZsqeG_s',
-               'https://upload.wikimedia.org/wikipedia/en/4/4c/Lost_in_Translation_poster.jpg'
-               )
+                   'https://www.youtube.com/watch?v=sU0oZsqeG_s',
+                   'https://upload.wikimedia.org/wikipedia/en/4/4c/Lost_in_Translation_poster.jpg',
+                   'Wes Anderson',
+                   '2003'
+                   )
 
     movie3 = Movie('The Life Aquatic with Steve Zissou',
-               'https://www.youtube.com/watch?v=yh401Rmkq0o',
-               'https://upload.wikimedia.org/wikipedia/en/7/7c/Lifeaquaticposter.jpg'
-               )
+                   'https://www.youtube.com/watch?v=yh401Rmkq0o',
+                   'https://upload.wikimedia.org/wikipedia/en/7/7c/Lifeaquaticposter.jpg',
+                   'Wes Anderson',
+                   '2004'
+                   )
+
+    movie4 = Movie('Fargo',
+                   'TRAILER-LINK',
+                   'POSTER-LINK',
+                   'Coen Brothers',
+                   'DATE'
+                   )
 
     movies = [movie1, movie2, movie3]
     open_movies_page(movies)
