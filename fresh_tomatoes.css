@@ -1,0 +1,214 @@
+/* 1. Normalization */
+
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-feature-settings: "kern", "liga";
+	-webkit-font-feature-settings: "kern", "liga";
+	font-variant: common-ligatures;
+	font-kerning: normal;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	touch-action: manipulation;
+}
+
+sup,
+sub {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: 0.5ex;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace; /* Not a typo */
+	font-size: 1em;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-feature-settings: "tnum", "pnum" off;
+	-webkit-font-feature-settings: "tnum", "pnum" off;
+	font-variant-numeric: tabular-nums;
+}
+
+td,
+th {
+	padding: 0;
+}
+
+progress {
+	vertical-align: baseline;
+}
+
+audio:not([controls]) {
+	display: none;
+}
+
+button,
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+	cursor: default;
+}
+
+fieldset {
+	padding: 0.5em;
+	margin: 0;
+	border: 1px solid #ccc;
+}
+
+iframe,
+object,
+video,
+input,
+textarea {
+	max-width: 100%;
+	border: 0;
+	box-sizing: border-box;
+}
+
+/* Normalize Webkit (Safari+Chrome) */
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+input[type="search"],
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+	box-sizing: border-box; /* Prevents issues in flexbox in all browsers*/
+	border-radius: 0;
+}
+
+/* Normalize Firefox */
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/* Normalize IE 11 */
+
+main {
+	display: block;
+}
+
+template {
+	display: none;
+}
+
+button {
+	overflow: visible;
+}
+
+textarea {
+	overflow: auto;
+}
+
+/* 2. Elements */
+
+table {
+	border: none;
+}
+
+/* 3. IDs, Classes, and Selectors */
+
+
+/* Pseudo-Classes */
+
+a:active,
+a:hover,
+input[type="search"] {
+	outline: 0;
+}
+
+/* 4. Color Scheme */
+
+a {
+	color: #COLOR;
+}
+
+/* Pseudo-Classes */
+
+a:hover,
+a:focus {
+	color: #COLOR;
+}
+
+::selection {
+background: #COLOR;
+color: #000;
+}
+
+::-moz-selection {
+background: #COLOR;
+color: #000;
+}
+
+/* 5.Animations */
+
+/* Animations and Transitions */
+
+a {
+	transition: color 0.2s ease-out 0s;
+}
+
+/* Media Queries */
+
+@media (max-width: 900px) {
+}
