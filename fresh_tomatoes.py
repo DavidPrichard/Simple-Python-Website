@@ -11,7 +11,7 @@ main_page_head = '''
     <meta charset="utf-8">
     <title>Fresh Tomatoes!</title>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/DavidPrichard/Simple-Python-Website/gh-pages/fresh_tomatoes.css">
+    <link rel="stylesheet" href="fresh_tomatoes.css">
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -109,7 +109,6 @@ def create_movie_tiles_content(movies):
             movie_title=movie.title,
             trailer_youtube_id=trailer_youtube_id,
             poster_image_url=movie.poster_image_url,
-
         )
     return content
 
@@ -132,7 +131,6 @@ def open_movies_page(movies):
 
 
 # MAIN
-
 if __name__ == '__main__':
 
     movie1 = Movie('The Matrix',
