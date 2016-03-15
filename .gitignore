@@ -107,5 +107,3 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-# All IntelliJ IDE stuff.
-.idea/
