@@ -247,9 +247,7 @@ header {
 	top: 0;
 	border: none;
 	height: 100%;
-	/* iOS Safari fix, see: stackoverflow.com/questions/23083462 */
-	width: 1%;
-	min-width: 100vw;
+	width: 100%;
 }
 
 /* Pseudo-Classes */
@@ -297,4 +295,10 @@ a,
 	#banner {
 		font-size: 32px;
 	}
+}
+
+/* iOS Safari fix, see: stackoverflow.com/questions/23083462 */
+@media (max-width: 640px) {
+	width: 1%;
+	min-width: 100vw; 
 }
