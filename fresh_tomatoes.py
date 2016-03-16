@@ -11,6 +11,8 @@ main_page_head = '''
     <meta charset="utf-8">
     <title>Fresh Tomatoes!</title>
     <link rel="stylesheet" href="fresh_tomatoes.css">
+    <link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -44,10 +46,15 @@ main_page_head = '''
 
 # The main page layout and title bar
 main_page_content = '''
-  <body>
-
+<body>
     <header id="banner">
+        <svg class="tomato" viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"/>
+        </svg>
         <a class="title" href="#">Fresh Tomatoes Movie Trailers</a>
+        <svg class="tomato" viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"/>
+        </svg>
     </header>
 
     <main class="flex-container">
@@ -55,33 +62,34 @@ main_page_content = '''
     </main>
 
     <div class="modal" id="trailer" style="display:none">
-        <div id="trailer-video-container">
-        </div>
+        <div id="trailer-video-container"></div>
     </div>
-
-  </body>
+</body>
 </html>
 '''
 
 
 # An html template for a single movie entry
 movie_tile_content = '''
-<div class="movie-tile" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="movie-tile" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer" style="background:{background_color}">
     <img src="{poster_image_url}">
     <h2>{movie_title}</h2>
-    <p>{director}, {release_date}</p>
+    <p class="tagline">"{tagline}"</p>
+    <p class="byline">{director}, {release_year}</p>
 </div>
 '''
 
 # Object used to store and render each movie
 class Movie:
 
-    def __init__(self, title, trailer_youtube_url, poster_image_url, director, release_date):
+    def __init__(self, title, tagline, trailer_youtube_url, poster_image_url, background_color, director, release_year):
         self.title = title
+        self.tagline = tagline
         self.trailer_youtube_url = trailer_youtube_url
         self.poster_image_url = poster_image_url
+        self.background_color = background_color  # valid CSS color value for movie-tile background
         self.director = director
-        self.release_date = release_date
+        self.release_year = release_year
 
 
 def create_movie_tiles_content(movies):
@@ -99,10 +107,12 @@ def create_movie_tiles_content(movies):
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
+            tagline=movie.tagline,
             trailer_youtube_id=trailer_youtube_id,
             poster_image_url=movie.poster_image_url,
+            background_color=movie.background_color,
             director=movie.director,
-            release_date=movie.release_date
+            release_year=movie.release_year
         )
     return content
 
@@ -128,32 +138,40 @@ def open_movies_page(movies):
 if __name__ == '__main__':
 
     movie1 = Movie('The Matrix',
+                   'The fight for the future begins.',
                    'https://www.youtube.com/watch?v=m8e-FF8MsqU',
                    'https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg',
+                   '#878CA9',
                    'The Wachowskis',
                    '1999'
                    )
 
     movie2 = Movie('Lost in Translation',
+                   'Everyone wants to be found.',
                    'https://www.youtube.com/watch?v=sU0oZsqeG_s',
                    'https://upload.wikimedia.org/wikipedia/en/4/4c/Lost_in_Translation_poster.jpg',
+                   '#FF7941',
                    'Wes Anderson',
                    '2003'
                    )
 
-    movie3 = Movie('The Life Aquatic with Steve Zissou',
+    movie3 = Movie('The Life Aquatic',
+                   'The deeper you go,<br>the weirder life gets.',
                    'https://www.youtube.com/watch?v=yh401Rmkq0o',
                    'https://upload.wikimedia.org/wikipedia/en/7/7c/Lifeaquaticposter.jpg',
+                   '#CFDB53',
                    'Wes Anderson',
                    '2004'
                    )
 
     movie4 = Movie('Fargo',
-                   'TRAILER-LINK',
-                   'POSTER-LINK',
+                   'A homespun murder story.',
+                   'https://www.youtube.com/watch?v=h2tY82z3xXU',
+                   'https://upload.wikimedia.org/wikipedia/en/a/ac/Fargo.jpg',
+                   '#CA4954',
                    'Coen Brothers',
-                   'DATE'
+                   '1996'
                    )
 
-    movies = [movie1, movie2, movie3]
+    movies = [movie1, movie2, movie3, movie4]
     open_movies_page(movies)

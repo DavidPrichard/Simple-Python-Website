@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <title>Fresh Tomatoes!</title>
     <link rel="stylesheet" href="fresh_tomatoes.css">
+    <link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -34,42 +36,51 @@
     </script>
 </head>
 
-  <body>
-
+<body>
     <header id="banner">
+        <svg class="tomato" viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"/>
+        </svg>
         <a class="title" href="#">Fresh Tomatoes Movie Trailers</a>
+        <svg class="tomato" viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"/>
+        </svg>
     </header>
 
     <main class="flex-container">
       
-<div class="movie-tile" data-trailer-youtube-id="m8e-FF8MsqU" data-toggle="modal" data-target="#trailer">
+<div class="movie-tile" data-trailer-youtube-id="m8e-FF8MsqU" data-toggle="modal" data-target="#trailer" style="background:#878CA9">
     <img src="https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg">
     <h2>The Matrix</h2>
-    <p>The Wachowskis, 1999</p>
+    <p class="tagline">"The fight for the future begins."</p>
+    <p class="byline">The Wachowskis, 1999</p>
 </div>
 
-<div class="movie-tile" data-trailer-youtube-id="sU0oZsqeG_s" data-toggle="modal" data-target="#trailer">
+<div class="movie-tile" data-trailer-youtube-id="sU0oZsqeG_s" data-toggle="modal" data-target="#trailer" style="background:#FF7941">
     <img src="https://upload.wikimedia.org/wikipedia/en/4/4c/Lost_in_Translation_poster.jpg">
     <h2>Lost in Translation</h2>
-    <p>Wes Anderson, 2003</p>
+    <p class="tagline">"Everyone wants to be found."</p>
+    <p class="byline">Wes Anderson, 2003</p>
 </div>
 
-<div class="movie-tile" data-trailer-youtube-id="yh401Rmkq0o" data-toggle="modal" data-target="#trailer">
+<div class="movie-tile" data-trailer-youtube-id="yh401Rmkq0o" data-toggle="modal" data-target="#trailer" style="background:#CFDB53">
     <img src="https://upload.wikimedia.org/wikipedia/en/7/7c/Lifeaquaticposter.jpg">
-    <h2>The Life Aquatic with Steve Zissou</h2>
-    <p>Wes Anderson, 2004</p>
+    <h2>The Life Aquatic</h2>
+    <p class="tagline">"The deeper you go,<br>the weirder life gets."</p>
+    <p class="byline">Wes Anderson, 2004</p>
+</div>
+
+<div class="movie-tile" data-trailer-youtube-id="h2tY82z3xXU" data-toggle="modal" data-target="#trailer" style="background:#CA4954">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/ac/Fargo.jpg">
+    <h2>Fargo</h2>
+    <p class="tagline">"A homespun murder story."</p>
+    <p class="byline">Coen Brothers, 1996</p>
 </div>
 
     </main>
 
     <div class="modal" id="trailer" style="display:none">
-
-        <div id="trailer-video-container">
-            <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
-                <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_"/>
-            </a>
-        </div>
+        <div id="trailer-video-container"></div>
     </div>
-
-  </body>
+</body>
 </html>

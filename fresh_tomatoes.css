@@ -169,10 +169,17 @@ table {
 /* 3. IDs, Classes, and Selectors */
 
 header {
-	font: 40px/2 Georgia;
+	font: 40px/2 'Sorts Mill Goudy';
 	text-align: center;
 	background: #000;
 	color: #fff;
+}
+
+.tomato {
+	height: 1em;
+	fill: red;
+	position: relative;
+	top: 6px;
 }
 
 .flex-container {
@@ -183,12 +190,32 @@ header {
 
 .movie-tile {
 	flex: 0;
-	padding: 20px;
+	margin: 40px 0 20px;
+	padding: 20px 40px 30px;
 	text-align: center;
+	position: relative; /* Allows children to be positioned absolutely _within_ it. */
 }
 
 .movie-tile img {
 	height: 350px;
+}
+
+.movie-tile h2 {
+	font: 300 28px Lato;
+	margin: 12px 0;
+}
+
+.movie-tile > .tagline {
+	font: 300 1em Lato;
+	margin-top: 8px;
+}
+
+.movie-tile > .byline {
+	font: 400 1em Lato;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
 }
 
 .movie-tile:hover {
@@ -206,16 +233,18 @@ header {
 	background: rgba(0,0,0,0.6);
 }
 
-.modal-open main,
 .modal-open header {
 	filter: blur(2px) grayscale(70%);
+}
+.modal-open main {
+	filter: blur(3px) grayscale(70%);
 }
 
 #trailer-video-container {
 	position: relative;
 	margin: 20vh auto 0;
 	height: 480px;
-	width: 640px;
+	max-width: 640px;
 }
 
 #trailer-video {
