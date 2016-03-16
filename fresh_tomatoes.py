@@ -83,7 +83,6 @@ movie_tile_content = '''
 </div>
 '''
 
-# Object used to store and render each movie
 class Movie:
 
     def __init__(self, title, tagline, trailer_youtube_url, poster_image_url, background_color, director, release_year):
@@ -96,9 +95,21 @@ class Movie:
         self.release_year = release_year
 
 
+# Takes a list of movie objects and outputs html movie tiles
 def create_movie_tiles_content(movies):
-    # The HTML content for this section of the page
-    content = ''
+
+    movie_tile_content = ''
+
+    # An html template for a single movie tile
+    movie_tile_template = '''
+    <div class="movie-tile" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer" style="background:{background_color}">
+    <img src="{poster_image_url}">
+    <h2>{movie_title}</h2>
+    <p class="tagline">"{tagline}"</p>
+    <p class="byline">{director}, {release_year}</p>
+    </div>
+    '''
+
     for movie in movies:
         # Extract the youtube ID from the url
         youtube_id_match = re.search(
@@ -109,7 +120,7 @@ def create_movie_tiles_content(movies):
                               else None)
 
         # Append the tile for the movie with its content filled in
-        content += movie_tile_content.format(
+        movie_tile_content += movie_tile_template.format(
             movie_title=movie.title,
             tagline=movie.tagline,
             trailer_youtube_id=trailer_youtube_id,
@@ -118,22 +129,20 @@ def create_movie_tiles_content(movies):
             director=movie.director,
             release_year=movie.release_year
         )
-    return content
+    return movie_tile_content
 
 
 def open_movies_page(movies):
     # Create or overwrite the output file
     output_file = open('fresh_tomatoes.html', 'w')
 
-    # Replace the movie tiles placeholder generated content
+    # Replace movie tile placeholder with movie tile content
     rendered_content = main_page_content.format(
         movie_tiles=create_movie_tiles_content(movies))
 
-    # Output the file
+    # Output the file and open it in the browser
     output_file.write(main_page_head + rendered_content)
     output_file.close()
-
-    # open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
 

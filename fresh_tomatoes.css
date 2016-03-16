@@ -37,11 +37,6 @@ sub {
 	top: 0.5ex;
 }
 
-img {
-	max-width: 100%;
-	height: auto;
-}
-
 code,
 kbd,
 pre,
@@ -193,7 +188,7 @@ header {
 }
 
 .movie-tile {
-	flex: 0;
+	flex: auto;
 	margin: 40px 0 20px;
 	padding: 20px 40px 30px;
 	text-align: center;
