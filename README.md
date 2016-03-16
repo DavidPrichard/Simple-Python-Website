@@ -8,6 +8,8 @@ or clone the repo: `git clone https://github.com/DavidPrichard/Simple-Python-Web
 
 ## Run it
 
-If you don't already have Python, you will need to [download it](https://www.python.org/downloads/). The project was written for Python 2.7.11, but it currently runs in 3.5 as well.
+If you don't already have Python, you will need to [download it](https://www.python.org/downloads/) and run the installer; I wrote the project in Python 2.7.11, so that is guaranteed to work.
 
-Once you have Python, run **fresh_tomatoes.py**. It should generate **fresh_tomatoes.html** and open it in your browser automatically. If you are lazy you can also view the latest version [here](http://davidprichard.github.io/Simple-Python-Website/fresh_tomatoes.html).
+Once you have Python, run `fresh_tomatoes.py` by opening it with the Python Launcher program.
+
+It should generate `fresh_tomatoes.html` and open it in your browser automatically. If you are lazy you can also view the latest version [here](http://davidprichard.github.io/Simple-Python-Website/fresh_tomatoes.html).
