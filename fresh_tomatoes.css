@@ -298,3 +298,10 @@ a,
 		font-size: 32px;
 	}
 }
+
+@media (orientation: landscape) {
+	#trailer-video {
+		max-width: 60vw;
+		max-height: 40vw;
+	}
+}
