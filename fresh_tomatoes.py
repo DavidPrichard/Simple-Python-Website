@@ -48,13 +48,17 @@ main_page_head = '''
 main_page_content = '''
 <body>
     <header id="banner">
-        <svg class="tomato" viewBox="0 0 48 48">
-            <circle cx="24" cy="24" r="20"/>
-        </svg>
-        <a class="title" href="#">Fresh Tomatoes Movie Trailers</a>
-        <svg class="tomato" viewBox="0 0 48 48">
-            <circle cx="24" cy="24" r="20"/>
-        </svg>
+        <a class="title" href="#">
+            <svg class="tomato" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20"/>
+            </svg>
+            Fresh Tomatoes
+            <span class="avoid-wrap">Movie Trailers
+                <svg class="tomato" viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"/>
+                </svg>
+            </span>
+        </a>
     </header>
 
     <main class="flex-container">

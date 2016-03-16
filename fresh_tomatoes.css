@@ -182,6 +182,10 @@ header {
 	top: 6px;
 }
 
+.avoid-wrap {
+	display: inline-block;
+}
+
 .flex-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -218,11 +222,6 @@ header {
 	bottom: 0;
 }
 
-.movie-tile:hover {
-	background-color: #EEE;
-	cursor: pointer;
-}
-
 .modal {
 	position: fixed;
 	z-index: 9000;
@@ -237,7 +236,7 @@ header {
 	filter: blur(2px) grayscale(70%);
 }
 .modal-open main {
-	filter: blur(3px) grayscale(70%);
+	filter: blur(3px) grayscale(80%);
 }
 
 #trailer-video-container {
@@ -256,8 +255,12 @@ header {
 	border: none;
 }
 
-
 /* Pseudo-Classes */
+
+a:hover,
+a:focus {
+	color: #ff8e6a;
+}
 
 a:active,
 a:hover,
@@ -265,26 +268,20 @@ input[type="search"] {
 	outline: 0;
 }
 
-/* 4. Color Scheme */
-
-a {
-	color: #COLOR;
-}
-
-/* Pseudo-Classes */
-
-a:hover,
-a:focus {
-	color: #COLOR;
+.movie-tile:hover,
+.movie-tile:focus {
+	background-color: #000 !important; /* So it overrides the color defined in the HTML */
+	color: #fff !important; /* Same */
+	cursor: pointer;
 }
 
 ::selection {
-background: #COLOR;
+background: #eee;
 color: #000;
 }
 
 ::-moz-selection {
-background: #COLOR;
+background: #eee;
 color: #000;
 }
 
@@ -292,11 +289,15 @@ color: #000;
 
 /* Animations and Transitions */
 
-a {
-	transition: color 0.2s ease-out 0s;
+a,
+.movie-tile {
+	transition: color, background 0.2s ease-out 0s;
 }
 
 /* Media Queries */
 
-@media (max-width: 900px) {
+@media (max-width: 720px) {
+	#banner {
+		font-size: 32px;
+	}
 }
