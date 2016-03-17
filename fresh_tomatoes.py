@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+"""Uses HTML templates and a list of movies to create an HTML document."""
 
 import webbrowser
 import os
@@ -85,14 +87,21 @@ movie_tile_content = '''
 </div>
 '''
 
-class Movie:
 
-    def __init__(self, title, tagline, trailer_youtube_url, poster_image_url, background_color, director, release_year):
+class Movie:
+    """Data structure for a film entry.
+
+    Attributes:
+        background_color (str): Any valid CSS color value.
+    """
+
+    def __init__(self, title, tagline, trailer_youtube_url, poster_image_url,
+                 background_color, director, release_year):
         self.title = title
         self.tagline = tagline
         self.trailer_youtube_url = trailer_youtube_url
         self.poster_image_url = poster_image_url
-        self.background_color = background_color  # valid CSS color value for movie-tile background
+        self.background_color = background_color
         self.director = director
         self.release_year = release_year
 
