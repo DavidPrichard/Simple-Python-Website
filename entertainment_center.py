@@ -1,4 +1,10 @@
 
+
+"""Creates a list of movies entries used to create movie tiles.
+
+Instantiates the Movie class several times and appends the results to a list.
+"""
+
 import media
 
 movie1 = media.Movie('The Matrix',
@@ -10,7 +16,7 @@ movie1 = media.Movie('The Matrix',
                      '1999'
                      )
 
-movie2 = media.Movie('Lost in Translation',
+movie2 = media.Movie('Lost in Translation',  # Criminally underrated movie
                      'Everyone wants to be found.',
                      'https://www.youtube.com/watch?v=sU0oZsqeG_s',
                      'https://upload.wikimedia.org/wikipedia/en/4/4c/Lost_in_Translation_poster.jpg',
@@ -19,7 +25,7 @@ movie2 = media.Movie('Lost in Translation',
                      '2003'
                      )
 
-movie3 = media.Movie('The Life Aquatic',
+movie3 = media.Movie('The Life Aquatic',  # Full name is longer, and fit the layout poorly
                      'The deeper you go,<br>the weirder life gets.',
                      'https://www.youtube.com/watch?v=yh401Rmkq0o',
                      'https://upload.wikimedia.org/wikipedia/en/7/7c/Lifeaquaticposter.jpg',
@@ -37,7 +43,7 @@ movie4 = media.Movie('Fargo',
                      '1996'
                      )
 
-movie5 = media.Movie('Star Wars',
+movie5 = media.Movie('Star Wars',  # Empire Strikes Back is better, but the name was too long
                      'A long time ago,<br>in a galaxy far, far away.',
                      'https://www.youtube.com/watch?v=1g3_CFmnU7k',
                      'https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg',

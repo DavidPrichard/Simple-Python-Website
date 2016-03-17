@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+"""Uses a list of movies and HTML templates to create an HTML document."""
 
 import webbrowser
 import os
